@@ -3,6 +3,7 @@ import pandas as pd
 from pandasai.llm import OpenAI,Falcon,Starcoder
 from pandasai import SmartDataframe
 import matplotlib.pyplot as plt
+import os
 
 
 st.title("CSV Analyzer")
