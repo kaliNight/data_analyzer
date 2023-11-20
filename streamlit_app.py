@@ -42,8 +42,10 @@ if button:
         with st.spinner("Generating response..."):
             response=model.chat(prompt)
             if response==None:
-                img= plt.imread('temp_chart.png')
-                st.image(img,"Output")
+                if os.path.isfile('temp_chart.png'):
+                    im = plt.imread('temp_chart.png')
+                    st.image(im)
+                    os.remove('temp_chart.png')
             else:
                 st.text_input(label="Output",value=response)
     else:
