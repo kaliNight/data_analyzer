@@ -4,6 +4,7 @@ from pandasai.llm import OpenAI,Falcon,Starcoder
 from pandasai import SmartDataframe
 import matplotlib.pyplot as plt
 
+
 st.title("CSV Analyzer")
 
 llm=OpenAI(api_token="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")
