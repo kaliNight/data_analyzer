@@ -11,7 +11,7 @@ st.write(st.secrets["OPENAI_API_KEY"])
 if st.secrets["OPENAI_API_KEY"]:
     st.write("True")
 
-# llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
+llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
 
 # llm_model = st.radio("LLM Model",["OpenAI", "Falcon", "Starcoder"],horizontal=True)
 
