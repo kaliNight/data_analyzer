@@ -7,17 +7,17 @@ import matplotlib.pyplot as plt
 
 st.title("CSV Analyzer")
 
-llm=OpenAI(api_token=st.secrets[OPENAI_API_KEY])
+llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
 
 llm_model = st.radio("LLM Model",["OpenAI", "Falcon", "Starcoder"],horizontal=True)
 
 if llm_model is not None:
     if llm_model=="OpenAI":
-        llm=OpenAI(api_token=st.secrets[OPENAI_API_KEY])
+        llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
     elif llm_model=="Falcon":
-        llm=Falcon(api_token=st.secrets[HUGGINGFACE_API_KEY])
+        llm=Falcon(api_token=st.secrets["HUGGINGFACE_API_KEY"])
     else:
-        llm=Starcoder(api_token=st.secrets[HUGGINGFACE_API_KEY])
+        llm=Starcoder(api_token=st.secrets["HUGGINGFACE_API_KEY"])
 else:
     st.write(":red[Please Select LLM Model]")
 
