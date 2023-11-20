@@ -13,17 +13,17 @@ if st.secrets["OPENAI_API_KEY"]:
 
 llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
 
-# llm_model = st.radio("LLM Model",["OpenAI", "Falcon", "Starcoder"],horizontal=True)
+llm_model = st.radio("LLM Model",["OpenAI", "Falcon", "Starcoder"],horizontal=True)
 
-# if llm_model is not None:
-#     if llm_model=="OpenAI":
-#         llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
-#     elif llm_model=="Falcon":
-#         llm=Falcon(api_token=st.secrets["HUGGINGFACE_API_KEY"])
-#     else:
-#         llm=Starcoder(api_token=st.secrets["HUGGINGFACE_API_KEY"])
-# else:
-#     st.write(":red[Please Select LLM Model]")
+if llm_model is not None:
+    if llm_model=="OpenAI":
+        llm=OpenAI(api_token=st.secrets["OPENAI_API_KEY"])
+    elif llm_model=="Falcon":
+        llm=Falcon(api_token=st.secrets["HUGGINGFACE_API_KEY"])
+    else:
+        llm=Starcoder(api_token=st.secrets["HUGGINGFACE_API_KEY"])
+else:
+    st.write(":red[Please Select LLM Model]")
 
 
 # csv_file = st.file_uploader("Click to Browse CSV File",type="csv")
