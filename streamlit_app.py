@@ -4,6 +4,7 @@ from pandasai.llm import OpenAI,Falcon,Starcoder
 from pandasai import SmartDataframe
 import matplotlib.pyplot as plt
 import os
+import time
 
 
 st.title("CSV Analyzer")
@@ -43,6 +44,7 @@ if button:
         with st.spinner("Generating response..."):
             response=model.chat(prompt)
             if response==None:
+                time.sleep(100)
                 path=os.getcwd()
                 st.image(os.path.join(path,"temp_chart.png"))
             else:
