@@ -43,7 +43,7 @@ if button:
             response=model.chat(prompt)
             if response==None:
                 img= plt.imread('temp_chart.png')
-                st.image(img)
+                st.image(img,"Output")
             else:
                 st.text_input(label="Output",value=response)
     else:
